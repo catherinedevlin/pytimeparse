@@ -134,6 +134,10 @@ class TestTimeparse(unittest.TestCase):
     def test_timeparse_granularity_4(self):
         '''Check that minute-level granularity does not apply inappropriately.'''
         self.assertEqual(timeparse.timeparse('0:02', granularity='seconds'), 2)
+
+    def test_timeparse_granularity_5(self):
+        '''Check that minute-level granularity applies correctly.'''
+        self.assertEqual(timeparse.timeparse(':32', granularity='minutes'), 32*60)
         
     def test_timeparse_11(self):
         '''timeparse test case 11.'''

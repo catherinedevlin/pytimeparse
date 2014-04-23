@@ -100,7 +100,8 @@ def _interpret_as_minutes(sval, mdict):
         and (('days' not in mdict) or (mdict['days'] is None))
         and (('weeks' not in mdict) or (mdict['weeks'] is None))
         ):   
-        mdict['hours'] = mdict['mins']
+        if 'mins' in mdict:
+            mdict['hours'] = mdict['mins']
         mdict['mins'] = mdict['secs']
         mdict.pop('secs')
         pass
