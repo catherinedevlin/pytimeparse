@@ -13,6 +13,10 @@ from distutils.core import setup
 with open('README.rst') as file:
     long_description = file.read()
 
+
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+
 setup(name             = 'pytimeparse',
       version          = '1.0.0',
       description      = 'Time expression parser',
@@ -20,5 +24,6 @@ setup(name             = 'pytimeparse',
       author_email     = 'wildwilhelm@gmail.com',
       url              = 'https://github.com/wroberts/pytimeparse',
       packages         = ['pytimeparse'],
+      install_requires = required,
       long_description = long_description,
 )
